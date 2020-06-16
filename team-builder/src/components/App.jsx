@@ -25,10 +25,6 @@ function App() {
 
   // console.log(teamMembers)git add . && git commit -m 'wip'
 
-
-  function addTeamMember(memberObject) {
-    setTeamMembers([...teamMembers, memberObject])
-  }
   const onInputChange = evt => {
     const { name, value } = evt.target
 
@@ -37,6 +33,20 @@ function App() {
   const onSubmit = evt => {
     evt.preventDefault()
 
+    if(!formValues.name || !formValues.email || !formValues.role) {
+      console.log('User did not enter enough information!')
+      return
+    }
+
+    const newMember = {
+      id: uuid(),
+      name: formValues.name,
+      email: formValues.email,
+      role: formValues.role
+    }
+
+    setTeamMembers(teamMembers => [newMember, ... teamMembers])
+    setFormValues(initialTeamMember)
     console.log('Form submitted!')
   }
 
