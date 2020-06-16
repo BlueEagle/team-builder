@@ -8,7 +8,7 @@ const initialMemberList = [
     id: uuid(),
     name: 'Jonathon',
     email: 'JonJon@gmail.com',
-    role: 'Front End Architect'
+    role: 'TL'
   }
 ]
 
@@ -36,6 +36,8 @@ function App() {
   }
   const onSubmit = evt => {
     evt.preventDefault()
+
+    console.log('Form submitted!')
   }
 
   return (

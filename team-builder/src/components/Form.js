@@ -33,9 +33,16 @@ function Form(props) {
           onChange={onInputChange}
         >
           <option value=''>-- Select a Role --</option>
-          
+          <option value='TL'>TL</option>
+          <option value='SL'>SL</option>
+          <option value='Student'>Student</option>
+          <option value='Other'>Other</option>
         </select>
       </label>
+
+      <input
+        type="submit"
+      />
     </form>
   )
 }
